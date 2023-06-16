@@ -12,7 +12,7 @@
 
 	aliases {
 		ethernet0 = &gem0;
-		serial0 = &uart1;
+		serial0 = &uart0;
 		spi0 = &qspi;
 		mmc0 = &sdhci0;
 	};
@@ -23,8 +23,8 @@
 	};
 
 	chosen {
-		bootargs = "";
-		stdout-path = "serial0:115200n8";
+		bootargs = "console=ttyPS0,115200n8 earlycon earlyprintk debug loglevel=8";
+       stdout-path = "&uart0:115200n8";
 	};
 
 	usb_phy0: phy0@e0002000 {
